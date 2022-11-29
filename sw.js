@@ -8,7 +8,6 @@ workbox.precaching.precacheAndRoute([
   'firebase.js',
   'offline.html',
   'recomendaciones.html',
-  'script.js',
   'icons/imagenAlgodon.png',
   'css/bootstrap.css',
   'css/bootstrap.min.css',
