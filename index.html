@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c97ae8">
+    <link rel="stylesheet icon" href="icons/icon-128.png">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Sucre Rose</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <script src="app.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    
+    <!-- One signal -->
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "7d89c5e1-aa55-46ab-be6c-ded61a84a4bd",
+        });
+      });
+    </script>
+</head>
+<body>
+  <header class="main-header"  style="background-color: #c97ae8">
+     
+    <div class="header-wrapper">
+      <div class="main-logo">Sucre Rose</div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="encontrar.html">Encontrar</a></li>
+          <li><a href="recomendaciones.html">Recomendaciones</a></li>
+          <li><a href="crear.html">Crear</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+      <section id="section-1">
+        <div class="content-slider">
+          <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+          <input type="radio" id="banner2" class="sec-1-input" name="banner">
+          <input type="radio" id="banner3" class="sec-1-input" name="banner">
+          <input type="radio" id="banner4" class="sec-1-input" name="banner">
+          <div class="slider">
+            <div id="top-banner-1" class="banner">
+              <div class="banner-inner-wrapper">
+                <h2>Bienvenido a</h2>  
+                <h1>Sucre<br>Rose </h1>
+                <div class="line"></div>
+               
+              </div>
+            </div>
+            <div id="top-banner-2" class="banner">
+              <div class="banner-inner-wrapper">
+                <h2>Recetas</h2>
+                <h1>De todo<br>tipo</h1>
+                <div class="line"></div>
+               
+              </div>
+            </div>
+            <div id="top-banner-3" class="banner">
+              <div class="banner-inner-wrapper">
+                <h2>El cocinero</h2>
+                <h1>Da alma<br>a la receta</h1>
+                <div class="line"></div>
+                
+              </div>
+            </div>
+            <div id="top-banner-4" class="banner">
+              <div class="banner-inner-wrapper">
+                <h2>Diversidad</h2>
+                <h1>De<br>Platillos</h1>
+                <div class="line"></div>
+                
+              </div>
+            </div>
+          </div>
+          <nav>
+            <div class="controls">
+              <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span>01</label>
+              <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span>02</label>
+              <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span>03</label>
+              <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span>04</label>
+            </div>
+          </nav>
+        </div>
+      </section>
+     
+      
+  <div class="row text-top">
+    <div class="col">
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+        <a id="instalar" href=""" class="menu-item orange"> <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a>
+        <a id="instalarN" href="" class="menu-item red"> <i class="fa fa-bell" aria-hidden="true"></i> </a>
+     </nav>
+    </div>
+  </div>
+     
+
+      <!-- <script src="js/bootstrap.js"></script> -->
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+      <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><
+      <script src="./index.js" type="module"></script>
+      <script src='https://use.fontawesome.com/8ae46bccf5.js'></script>
+      <script  src="./script.js"></script>
+      <script>
+        let eventoPrompt;
+        window.addEventListener('beforeinstallprompt', function(e){
+          e.preventDefault();
+          eventoPrompt= e;
+        });
+        btnInstalar = document.getElementById("instalar");
+        
+
+          btnInstalar.addEventListener('click', (e) =>{
+            btnInstalar.style.display='none';
+            eventoPrompt.prompt();
+            eventoPrompt.userChoice.then((choiceResult)=>{
+              if(choiceResult.outcome==='accepted'){
+                console.log('El usuario instalo la app');
+              }else{
+                console.log('El usuario rechazo la instalación');
+              }
+              eventoPrompt=null;
+            });
+          });
+
+          //-------------------NOTIFICACIONES --------------//
+          let botonNotificaciones = document.getElementById("instalarNotificaciones");
+          botonNotificaciones.addEventListener('click', function(e){
+            Notification.requestPermission().then(function(result){
+              if(result==='granted'){
+                randomNotifiacion();
+              }
+            });
+          });
+
+          function randomNotifiacion(){
+            let nTitle="Notificaciones activadas";
+            let nbody="No te pierdas de ninguna actualización";
+            let nImage="./icons/icon-32.png";
+
+            let options={
+              body: nbody,
+              icon: nImage
+            }
+            let notif= new Notification(nTitle, options);
+            setTimeout(randomNotifiacion,10000)
+          }
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c97ae8">
+    <link rel="stylesheet icon" href="icons/icon-128.png">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Sucre Rose</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <script src="app.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    
+</head>
+<body>
+  <header class="main-header"  style="background-color: #c97ae8">
+    <div class="header-wrapper">
+      <div class="main-logo">Sucre Rose</div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="encontrar.html">Encontrar</a></li>
+          <li><a href="recomendaciones.html">Recomendaciones</a></li>
+          <li><a href="crear.html">Crear</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<br><br><br><br>
+<br>
+<section>
+  <div class="container p-2">
+  <div class="row">
+    <form id="task-form">
+      <h1 class="h4" style="color: #330b42">Añadir Receta</h1>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="title">Titulo:</label>
+          <input type="text" id="task-title" class="form-control mb-3" class="My First Title" placeholder="Titulo de la receta" autofocus />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="dificultad">Dificultad:</label>
+          <input type="text" id="task-dificultad" class="form-control mb-3" class="My First Title" placeholder="Nivel de dificultad" autofocus />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="porciones">Porciones:</label>
+          <input type="text" id="task-porciones" class="form-control mb-3" class="My First Title" placeholder="Porciones" autofocus />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tiempo">Tiempo de preparación:</label>
+          <input type="text" id="task-tiempo" class="form-control mb-3" class="My First Title" placeholder="Tiempo en mimutos" autofocus />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ingredientes">Ingredientes:</label>
+        <textarea id="task-ingredientes" rows="3" class="form-control mb-5" placeholder="Ingredientes, no olvides dar un salto de linea despues de cada uno"></textarea>
+
+      </div>
+      <div class="form-group">
+        <label for="description">Procedimiento:</label>
+        <textarea id="task-description" rows="6" class="form-control mb-5" placeholder="Task Description"></textarea>
+      </div>
+      <button class="btn btn-primary" id="btn-task-form">Guardar</button>
+    </form>
+  </div>
+</div>
+
+
+</section>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="./index.js" type="module"></script>
+<script src='https://use.fontawesome.com/8ae46bccf5.js'></script>
+
+</body>
+</html>
